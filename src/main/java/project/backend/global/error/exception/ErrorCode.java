@@ -13,7 +13,7 @@ public enum ErrorCode {
     HANDLE_ACCESS_DENIED(403, "C006", "Access is Denied"),
     INVALID_REQUEST(400, "C007", "요청이 잘못되었습니다."),
     MONTH_FORMAT_BAD_REQUEST(400, "C008", "월별 조회는 yyyy-mm 형식으로 맞춰야 합니다."),
-
+    MISSING_REQUEST(400, "C009", "필수 요청 정보가 누락되었습니다."),
 
     // S3
     IMAGE_UPLOAD_FAIL(400, "S001", "이미지를 업로드할 수 없습니다."),
@@ -34,7 +34,7 @@ public enum ErrorCode {
     TICKET_VIEW_FAIL(400, "T003", "내 티켓 또는 전체 공개 티켓만 조회할 수 있습니다."),
     TICKET_PATCH_FAIL(400, "T004", "내 티켓만 수정할 수 있습니다."),
 
-    // Category
+    // Ingredient
     CATEGORY_NOT_FOUND(400, "CA001", "카테고리를 찾을 수 없습니다."),
 
     // Quit

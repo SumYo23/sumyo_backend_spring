@@ -13,7 +13,7 @@ import project.backend.domain.member.entity.Member.MemberBuilder;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-11-08T01:07:20+0900",
+    date = "2023-11-20T18:32:21+0900",
     comments = "version: 1.4.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.3.jar, environment: Java 11.0.16.1 (Oracle Corporation)"
 )
 @Component
