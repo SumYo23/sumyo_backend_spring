@@ -15,7 +15,8 @@ import java.util.Optional;
 
 import static project.backend.global.validator.LocalDateTimeValidation.convertStringToLocalDateTime;
 
-@Entity(name="member_ingredient")
+@Entity
+@Table(name = "member_ingredient")
 @Getter
 @RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 public class MemberIngredient extends BaseEntity {

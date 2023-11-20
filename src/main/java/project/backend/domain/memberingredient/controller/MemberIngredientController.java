@@ -20,7 +20,7 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
 
-@Api(tags = "재료 추가 API")
+@Api(tags = "재료 추가 API - 완료 API(프론트 작업 가능)")
 @RestController
 @RequestMapping("/api/member/ingredients")
 @RequiredArgsConstructor
@@ -36,7 +36,8 @@ public class MemberIngredientController {
                 "  \"cnt\": 5(1이상),\n" +
                 "  \"expDt\": \"2023-10-10T10:10:10(필수)\",\n" +
                 "  \"ingredientName\": \"사과(필수)\"\n" +
-                "}")
+                "}\n" +
+                " - ingredientName 추가시 /api/ingredients를 조회 후 사용자에게 자동완성으로 권장한 후에 입력해주세요.")
     @PostMapping
     public ResponseEntity postMemberIngredient(
             @RequestHeader(value = "Authorization", required = false) String accessToken,
