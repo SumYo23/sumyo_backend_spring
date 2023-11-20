@@ -19,7 +19,7 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
 
-@Api(tags = "카테고리 API - 완료 API(프론트 작업 가능)")
+@Api(tags = "재료 API - 완료 API(프론트 작업 가능)")
 @RestController
 @RequestMapping("/api/ingredients")
 @RequiredArgsConstructor
@@ -49,7 +49,7 @@ public class IngredientController {
         return ResponseEntity.status(HttpStatus.OK).body(ingredientResponseDto);
     }
 
-    @ApiOperation(value = "카테고리 목록 조회(재난, 시위, 축제)")
+    @ApiOperation(value = "전체 재료 목록 조회(재료명, 권고 유통기한_하루기준)")
     @GetMapping
     public ResponseEntity getIngredientList() {
         List<IngredientResponseDto> ingredientResponseDtoList = ingredientMapper.ingredientsToIngredientResponseDtos(ingredientService.getIngredientList());
