@@ -31,6 +31,10 @@ public class IngredientService {
         return verifiedIngredient(id);
     }
 
+    public Ingredient getOrCreateIngredient(String name) {
+        return ingredientRepository.findOneByName(name).orElseGet(() -> createIngredient(IngredientPostRequestDto.builder().name(name).build()));
+    }
+
     public List<Ingredient> getIngredientList() {
         return ingredientRepository.findAll();
     }
@@ -46,11 +50,11 @@ public class IngredientService {
     }
 
     public Ingredient verifiedIngredientName(String name) {
-        return ingredientRepository.findOneByName(name).orElseThrow(() -> new BusinessException(ErrorCode.CATEGORY_NOT_FOUND));
+        return ingredientRepository.findOneByName(name).orElseThrow(() -> new BusinessException(ErrorCode.INGREDIENT_NOT_FOUND));
     }
 
     private Ingredient verifiedIngredient(Long id) {
-        return ingredientRepository.findById(id).orElseThrow(() -> new BusinessException(ErrorCode.CATEGORY_NOT_FOUND));
+        return ingredientRepository.findById(id).orElseThrow(() -> new BusinessException(ErrorCode.INGREDIENT_NOT_FOUND));
     }
 
 }

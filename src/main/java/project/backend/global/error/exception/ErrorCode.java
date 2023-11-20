@@ -14,6 +14,7 @@ public enum ErrorCode {
     INVALID_REQUEST(400, "C007", "요청이 잘못되었습니다."),
     MONTH_FORMAT_BAD_REQUEST(400, "C008", "월별 조회는 yyyy-mm 형식으로 맞춰야 합니다."),
     MISSING_REQUEST(400, "C009", "필수 요청 정보가 누락되었습니다."),
+    LOCAL_DATE_TIME_VALIDATOR(400, "C010", "날짜 입력 형식을 확인해주세요. ex) 2023-11-01T00:00:00"),
 
     // S3
     IMAGE_UPLOAD_FAIL(400, "S001", "이미지를 업로드할 수 없습니다."),
@@ -28,14 +29,12 @@ public enum ErrorCode {
     NICKNAME_DUPLICATE(400, "M007", "닉네임이 중복되었습니다."),
     MEMBER_LOGOUT(400, "M008", "이미 로그아웃한 유저입니다."),
 
-    // Ticket
-    TICKET_NOT_FOUND(400, "T001", "티켓을 찾을 수 없습니다."),
-    TICKET_DELETE_FAIL(400, "T002", "내 티켓만 삭제할 수 있습니다."),
-    TICKET_VIEW_FAIL(400, "T003", "내 티켓 또는 전체 공개 티켓만 조회할 수 있습니다."),
-    TICKET_PATCH_FAIL(400, "T004", "내 티켓만 수정할 수 있습니다."),
-
     // Ingredient
-    CATEGORY_NOT_FOUND(400, "CA001", "카테고리를 찾을 수 없습니다."),
+    INGREDIENT_NOT_FOUND(400, "I001", "재료를 찾을 수 없습니다."),
+
+    // MemberIngredient
+    MEMBER_INGREDIENT_NOT_FOUND(400, "MI001", "사용자의 재료를 찾을 수 없습니다."),
+    MEMBER_INGREDIENT_CANT_DELETE(400, "MI002", "사용자의 재료는 사용자만 삭제할 수 있습니다."),
 
     // Quit
     NOTICE_NOT_FOUND(400, "N001", "공지를 찾을 수 없습니다.")

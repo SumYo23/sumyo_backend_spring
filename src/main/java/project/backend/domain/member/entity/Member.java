@@ -6,8 +6,11 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import project.backend.domain.common.entity.BaseEntity;
 import project.backend.domain.member.dto.MemberPatchRequestDto;
+import project.backend.domain.memberingredient.entity.MemberIngredient;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Entity
@@ -25,6 +28,9 @@ public class Member extends BaseEntity {
     public String socialId;
 
     public String refreshToken;
+
+    @OneToMany(mappedBy = "member", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<MemberIngredient> memberIngredientList = new ArrayList<>();
 
 
     @Builder

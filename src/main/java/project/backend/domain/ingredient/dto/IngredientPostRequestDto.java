@@ -14,7 +14,7 @@ public class IngredientPostRequestDto {
 
 
     /**
-     * Ingredient 엔티티 반환
+     * MemberIngredient 엔티티 반환
      * @return
      */
     public Ingredient toEntity(){

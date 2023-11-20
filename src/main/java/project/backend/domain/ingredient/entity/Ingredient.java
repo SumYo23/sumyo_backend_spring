@@ -6,8 +6,11 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import project.backend.domain.ingredient.dto.IngredientPatchRequestDto;
 import project.backend.domain.common.entity.BaseEntity;
+import project.backend.domain.memberingredient.entity.MemberIngredient;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Entity
@@ -17,7 +20,7 @@ public class Ingredient extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "category_id")
+    @Column(name = "ingredient_id")
     public Long id;
 
     @Column(name = "name")
@@ -25,6 +28,9 @@ public class Ingredient extends BaseEntity {
 
     @Column(name = "exp_period")
     public Integer expPeriod;
+
+    @OneToMany(mappedBy = "ingredient", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<MemberIngredient> memberIngredientList = new ArrayList<>();
 
     @Builder
     public Ingredient(String name){
