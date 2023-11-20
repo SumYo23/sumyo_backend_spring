@@ -28,10 +28,6 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
 
-  batch:
-    jdbc:
-      initialize-schema: always
-
 cloud:
   aws:
     s3:
