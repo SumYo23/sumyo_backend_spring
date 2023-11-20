@@ -13,7 +13,7 @@ import project.backend.domain.ingredient.entity.Ingredient.IngredientBuilder;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-11-20T18:32:21+0900",
+    date = "2023-11-20T20:46:36+0900",
     comments = "version: 1.4.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.3.jar, environment: Java 11.0.16.1 (Oracle Corporation)"
 )
 @Component
@@ -28,9 +28,6 @@ public class IngredientMapperImpl implements IngredientMapper {
         IngredientBuilder ingredient = Ingredient.builder();
 
         ingredient.name( ingredientPostRequestDto.getName() );
-        if ( ingredientPostRequestDto.getExpPeriod() != null ) {
-            ingredient.expPeriod( ingredientPostRequestDto.getExpPeriod() );
-        }
 
         return ingredient.build();
     }
@@ -44,9 +41,6 @@ public class IngredientMapperImpl implements IngredientMapper {
         IngredientBuilder ingredient = Ingredient.builder();
 
         ingredient.name( ingredientPatchRequestDto.getName() );
-        if ( ingredientPatchRequestDto.getExpPeriod() != null ) {
-            ingredient.expPeriod( ingredientPatchRequestDto.getExpPeriod() );
-        }
 
         return ingredient.build();
     }

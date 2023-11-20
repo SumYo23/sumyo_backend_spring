@@ -27,9 +27,9 @@ public class Ingredient extends BaseEntity {
     public Integer expPeriod;
 
     @Builder
-    public Ingredient(String name, int expPeriod){
+    public Ingredient(String name){
         this.name = name;
-        this.expPeriod = expPeriod;
+        this.expPeriod = 0;
     }
 
     // Patch
